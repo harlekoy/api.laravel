@@ -1,0 +1,556 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Project Laravel",
+        "description": "Project Laravel",
+        "contact": {
+            "email": "bertrand@idearobin.com"
+        },
+        "version": "1.0.0"
+    },
+    "host": "api.canard.dev",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Authenticates guest user by logging in.",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "Registered user's email address",
+                        "required": true,
+                        "type": "string",
+                        "default": "bertrand@idearobin.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "Registered user's password",
+                        "required": true,
+                        "type": "string",
+                        "default": "retardko"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "token": {
+                                    "description": "Authenticates guest user by logging in.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Invalid credentials",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Authenticates guest user by logging in.",
+                                    "type": "string",
+                                    "default": "invalid_credentials"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not create token",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Authenticates guest user by logging in.",
+                                    "type": "string",
+                                    "default": "could_not_create_token"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout currently authenticated user.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWT Token",
+                        "required": true,
+                        "type": "string",
+                        "items": {
+                            "type": "string"
+                        },
+                        "default": "Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Signed out",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "message": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "string",
+                                    "default": "signed_out"
+                                },
+                                "status_code": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "integer",
+                                    "default": 200
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Token not provided",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "message": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "string",
+                                    "default": "Token not provided"
+                                },
+                                "status_code": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "integer",
+                                    "default": 400
+                                },
+                                "debug": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "417": {
+                        "description": "Cannot sign out",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "message": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "string",
+                                    "default": "cannot_sign_out"
+                                },
+                                "status_code": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "integer",
+                                    "default": 417
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not create token",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "message": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "string",
+                                    "default": "could_not_create_token"
+                                },
+                                "status_code": {
+                                    "description": "Logout currently authenticated user.",
+                                    "type": "integer",
+                                    "default": 500
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Retrieves all Users",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "data": {
+                                    "description": "Get all Users.",
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not retrieve users",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Get all Users.",
+                                    "type": "string",
+                                    "default": "could_not_retrieve_data"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/profile/{user_id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Retrieve single User details",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "USER_ID to retrieve",
+                        "required": true,
+                        "type": "integer",
+                        "default": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "data": {
+                                    "description": "Get user details.",
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not retrieve data",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Get user details.",
+                                    "type": "string",
+                                    "default": "could_not_retrieve_data"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Delete User",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "USER_ID to delete",
+                        "required": true,
+                        "type": "integer",
+                        "default": 8
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "status": {
+                                    "description": "Status message from server",
+                                    "type": "string",
+                                    "default": "Record successfully deleted."
+                                },
+                                "user": {
+                                    "description": "Delete User.",
+                                    "$ref": "#/definitions/User"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not delete data",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Delete User.",
+                                    "type": "string",
+                                    "default": "could_not_delete_data"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Edit User",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "USER_ID to edit",
+                        "required": true,
+                        "type": "integer",
+                        "default": 8
+                    },
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User object to edit",
+                        "required": true,
+                        "schema": {
+                            "title": "user",
+                            "properties": {
+                                "user": {
+                                    "description": "Edit User.",
+                                    "$ref": "#/definitions/User"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "required": [
+                                "status",
+                                "user"
+                            ],
+                            "properties": {
+                                "status": {
+                                    "description": "Status message from server",
+                                    "type": "string",
+                                    "default": "Record successfully updated."
+                                },
+                                "user": {
+                                    "description": "Edit User.",
+                                    "$ref": "#/definitions/User"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not update data",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Edit User.",
+                                    "type": "string",
+                                    "default": "could_not_update_data"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/profile": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Retrieves User Profile",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "data": {
+                                    "description": "Get logged in user profile.",
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not retrieve data",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Get logged in user profile.",
+                                    "type": "string",
+                                    "default": "could_not_retrieve_data"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Add User",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User object to add",
+                        "required": true,
+                        "schema": {
+                            "title": "user",
+                            "properties": {
+                                "user": {
+                                    "description": "Add User.",
+                                    "$ref": "#/definitions/User"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "data",
+                            "required": [
+                                "status",
+                                "user"
+                            ],
+                            "properties": {
+                                "status": {
+                                    "description": "Status message from server",
+                                    "type": "string",
+                                    "default": "Record successfully added."
+                                },
+                                "user": {
+                                    "description": "Add User.",
+                                    "$ref": "#/definitions/User"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Could not add data",
+                        "schema": {
+                            "title": "data",
+                            "properties": {
+                                "error": {
+                                    "description": "Add User.",
+                                    "type": "string",
+                                    "default": "could_not_add_data"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "User": {
+            "properties": {
+                "email": {
+                    "description": "Unique email address",
+                    "type": "string",
+                    "default": "janedoe@example.com"
+                },
+                "password": {
+                    "description": "Password must be at least 6 characters",
+                    "type": "string",
+                    "default": "helloworld"
+                },
+                "password_confirmation": {
+                    "description": "Re-enter password",
+                    "type": "string",
+                    "default": "helloworld"
+                },
+                "first_name": {
+                    "description": "First Name",
+                    "type": "string",
+                    "default": "Jane"
+                },
+                "last_name": {
+                    "description": "Last Name",
+                    "type": "string",
+                    "default": "Doe"
+                },
+                "phone": {
+                    "description": "Phone number",
+                    "type": "string",
+                    "default": "555-1234"
+                },
+                "address": {
+                    "description": "Address",
+                    "type": "string",
+                    "default": "Galway St."
+                },
+                "suburb": {
+                    "description": "Suburb",
+                    "type": "string",
+                    "default": "Adamantine"
+                },
+                "postcode": {
+                    "description": "Postal Code",
+                    "type": "string",
+                    "default": "90218"
+                },
+                "state_id": {
+                    "description": "STATE_ID of state",
+                    "type": "integer",
+                    "format": "int64",
+                    "default": 2
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Project Laravel",
+        "url": "https://github.com/g-six/laravel"
+    }
+}
