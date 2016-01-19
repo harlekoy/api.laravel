@@ -3,18 +3,18 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Controllers\Auth;
+namespace App\Api\Controllers\Auth;
 
 use Dingo\Api\Facade\API;
-use IdeaRobin\Api\Controllers\BaseController;
-use IdeaRobin\Api\Eloquent\Navlink;
-use IdeaRobin\Api\Eloquent\User;
-use IdeaRobin\Api\Requests\UserRequest;
-use IdeaRobin\Api\Transformers\UserTransformer;
+use App\Api\Controllers\BaseController;
+use App\Api\Eloquent\Navlink;
+use App\Api\Eloquent\User;
+use App\Api\Requests\UserRequest;
+use App\Api\Transformers\UserTransformer;
 use Illuminate\Http\Request;
 use Swagger\Annotations as SWG;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -107,7 +107,7 @@ class AuthController extends BaseController
         // grab credentials from the request
         $credentials = array_filter($request->only('email', 'password'));
 
-        $claims = ['company' => 'IdeaRobin'];
+        $claims = ['company' => 'App'];
 
         try {
             // attempt to verify the credentials and create a token for the user

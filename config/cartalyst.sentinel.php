@@ -52,7 +52,7 @@ return [
 
     'users' => [
 
-        'model' => 'IdeaRobin\Api\Eloquent\User',
+        'model' => 'App\Api\Eloquent\User',
 
     ],
     /*

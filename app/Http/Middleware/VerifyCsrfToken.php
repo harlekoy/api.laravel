@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 

@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Eloquent;
+namespace App\Api\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
 use Swagger\Annotations as SWG;
@@ -49,7 +49,7 @@ class UserInformation extends Model
      */
     public function user()
     {
-        return $this->belongsTo('IdeaRobin\Api\Eloquent\User', 'user_id');
+        return $this->belongsTo('App\Api\Eloquent\User', 'user_id');
     }
 
     /**
@@ -61,6 +61,6 @@ class UserInformation extends Model
      */
     public function state()
     {
-        return $this->hasOne('IdeaRobin\Api\Eloquent\State', 'id', 'state_id');
+        return $this->hasOne('App\Api\Eloquent\State', 'id', 'state_id');
     }
 }

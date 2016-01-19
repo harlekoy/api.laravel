@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Eloquent;
+namespace App\Api\Eloquent;
 
 use Cartalyst\Sentinel\Users\EloquentUser as SentinelUser;
 use Exception;
@@ -85,7 +85,7 @@ class User extends SentinelUser implements AuthenticatableContract, Authorizable
      */
     public function beneficiaries()
     {
-        return $this->hasMany('IdeaRobin\Api\Eloquent\Beneficiary', 'user_id', 'id');
+        return $this->hasMany('App\Api\Eloquent\Beneficiary', 'user_id', 'id');
     }
 
     /**
@@ -97,7 +97,7 @@ class User extends SentinelUser implements AuthenticatableContract, Authorizable
      */
     public function estates()
     {
-        return $this->belongsToMany('IdeaRobin\Api\Eloquent\Estate');
+        return $this->belongsToMany('App\Api\Eloquent\Estate');
     }
 
     /**
@@ -109,6 +109,6 @@ class User extends SentinelUser implements AuthenticatableContract, Authorizable
      */
     public function eois()
     {
-        return $this->hasMany('IdeaRobin\Api\Eloquent\Eoi', 'user_id', 'id');
+        return $this->hasMany('App\Api\Eloquent\Eoi', 'user_id', 'id');
     }
 }

@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Providers;
+namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'IdeaRobin\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

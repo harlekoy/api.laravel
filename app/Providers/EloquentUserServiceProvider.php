@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Providers;
+namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Tymon\JWTAuth\Providers\User\UserInterface;

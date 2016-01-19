@@ -3,18 +3,18 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Controllers;
+namespace App\Api\Controllers;
 
 use Dingo\Api\Facade\API;
 use Exception;
-use IdeaRobin\Api\Eloquent\User;
-use IdeaRobin\Api\Eloquent\UserInformation;
-use IdeaRobin\Api\Requests\UserRequest;
-use IdeaRobin\Api\Transformers\UserInformationTransformer;
+use App\Api\Eloquent\User;
+use App\Api\Eloquent\UserInformation;
+use App\Api\Requests\UserRequest;
+use App\Api\Transformers\UserInformationTransformer;
 use Illuminate\Http\Request;
 use Swagger\Annotations as SWG;
 use Tymon\JWTAuth\Facades\JWTAuth;

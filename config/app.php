@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        IdeaRobin\Providers\AppServiceProvider::class,
-        IdeaRobin\Providers\AuthServiceProvider::class,
-        IdeaRobin\Providers\EventServiceProvider::class,
-        IdeaRobin\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,

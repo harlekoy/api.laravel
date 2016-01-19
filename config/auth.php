@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => IdeaRobin\Api\Eloquent\User::class,
+    'model' => App\Api\Eloquent\User::class,
 
     /*
     |--------------------------------------------------------------------------

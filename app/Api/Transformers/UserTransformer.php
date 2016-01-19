@@ -3,13 +3,13 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Transformers;
+namespace App\Api\Transformers;
 
-use IdeaRobin\Api\Eloquent\User;
+use App\Api\Eloquent\User;
 use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract

@@ -3,14 +3,14 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use IdeaRobin\Http\Controllers\Controller;
-use IdeaRobin\User;
+use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Validator;
 

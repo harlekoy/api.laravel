@@ -3,14 +3,14 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Requests;
+namespace App\Api\Requests;
 
-use IdeaRobin\Api\Eloquent\User;
-use IdeaRobin\Http\Requests\Request;
+use App\Api\Eloquent\User;
+use App\Http\Requests\Request;
 
 class UserRequest extends Request
 {

@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'user' => 'IdeaRobin\Api\Eloquent\User',
+    'user' => 'App\Api\Eloquent\User',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,7 +124,7 @@ return [
         |
         */
 
-        'user' => 'IdeaRobin\Providers\EloquentUserServiceProvider',
+        'user' => 'App\Providers\EloquentUserServiceProvider',
 
         /*
         |--------------------------------------------------------------------------

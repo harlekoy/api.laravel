@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - LightMediaEdge: Project Canard
+ * App - LightMediaEdge: Project Canard
  *
  * @link    https://github.com/LightMediaEdge/Canard
  */
-namespace IdeaRobin\Api\Controllers;
+namespace App\Api\Controllers;
 
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Routing\Controller;

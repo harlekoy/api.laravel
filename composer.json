@@ -29,7 +29,7 @@
             "database"
         ],
         "psr-4": {
-            "IdeaRobin\\": "app/",
+            "App\\": "app/",
             "Test\\": "tests/"
         }
     },

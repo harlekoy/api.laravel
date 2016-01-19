@@ -3,7 +3,7 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
@@ -16,7 +16,7 @@ $api->version('v1', function (Router $api) {
 
     // Set our namespace for the underlying routes
     $api->group([
-        'namespace'  => 'IdeaRobin\Api\Controllers',
+        'namespace'  => 'App\Api\Controllers',
         'middleware' => [
             'cors',
             'api.throttle',

@@ -3,11 +3,11 @@
 /**
  * This file is part of the Laravel Project Software package.
  *
- * IdeaRobin - Laravel Project
+ * App - Laravel Project
  *
  * @link    https://github.com/g-six/laravel
  */
-namespace IdeaRobin\Api\Transformers;
+namespace App\Api\Transformers;
 
 use Cartalyst\Sentinel\Roles\EloquentRole as Role;
 use League\Fractal\TransformerAbstract;
